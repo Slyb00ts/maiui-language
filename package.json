@@ -3,6 +3,7 @@
   "displayName": "MAIUI Language Support",
   "description": "Syntax highlighting and code suggestions for MAIUI files",
   "version": "0.1.0",
+  "publisher": "Slyb00ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:Slyb00ts/maiui-language.git"
