@@ -1,0 +1,94 @@
+{
+	"name": "MAIUI",
+	"scopeName": "text.xml.maiui",
+	"fileTypes": ["maiui"],
+	"patterns": [
+	  {
+		"include": "#comments"
+	  },
+	  {
+		"begin": "(<)([a-zA-Z_][a-zA-Z0-9_]*)(?=[\\s>])",
+		"beginCaptures": {
+		  "1": { "name": "punctuation.definition.tag.begin.maiui" },
+		  "2": { "name": "entity.name.tag.maiui" }
+		},
+		"end": "(/?>)",
+		"endCaptures": {
+		  "1": { "name": "punctuation.definition.tag.end.maiui" }
+		},
+		"name": "meta.tag.maiui",
+		"patterns": [
+		  {
+			"include": "#tag-attributes"
+		  }
+		]
+	  },
+	  {
+		"begin": "(</)([-_a-zA-Z0-9:]+)",
+		"beginCaptures": {
+		  "1": { "name": "punctuation.definition.tag.begin.maiui" },
+		  "2": { "name": "entity.name.tag.maiui" }
+		},
+		"end": "(>)",
+		"endCaptures": {
+		  "1": { "name": "punctuation.definition.tag.end.maiui" }
+		},
+		"name": "meta.tag.maiui"
+	  }
+	],
+	"repository": {
+	  "comments": {
+		"begin": "<!--",
+		"captures": {
+		  "0": { "name": "punctuation.definition.comment.maiui" }
+		},
+		"end": "-->",
+		"name": "comment.block.maiui"
+	  },
+	  "tag-attributes": {
+		"patterns": [
+		  {
+			"match": "([a-zA-Z_][a-zA-Z0-9_:]*)\\s*(=)",
+			"captures": {
+			  "1": { "name": "entity.other.attribute-name.maiui" },
+			  "2": { "name": "punctuation.separator.key-value.maiui" }
+			}
+		  },
+		  {
+			"begin": "\"",
+			"beginCaptures": {
+			  "0": { "name": "punctuation.definition.string.begin.maiui" }
+			},
+			"end": "\"",
+			"endCaptures": {
+			  "0": { "name": "punctuation.definition.string.end.maiui" }
+			},
+			"name": "string.quoted.double.maiui",
+			"patterns": [
+			  {
+				"match": "\\\\[\"\\\\]",
+				"name": "constant.character.escape.maiui"
+			  }
+			]
+		  },
+		  {
+			"begin": "'",
+			"beginCaptures": {
+			  "0": { "name": "punctuation.definition.string.begin.maiui" }
+			},
+			"end": "'",
+			"endCaptures": {
+			  "0": { "name": "punctuation.definition.string.end.maiui" }
+			},
+			"name": "string.quoted.single.maiui",
+			"patterns": [
+			  {
+				"match": "\\\\['\\\\]",
+				"name": "constant.character.escape.maiui"
+			  }
+			]
+		  }
+		]
+	  }
+	}
+  }
